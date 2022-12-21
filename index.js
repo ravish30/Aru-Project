@@ -45,7 +45,11 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-//404 error handler
-app.use(function (req, res, next) {
-	res.status(404).sendFile(__dirname + "/error/404.html")
+app.get('/', (req, res) => {
+	res.send("Success");
 })
+
+//404 error handler
+// app.use(function (req, res, next) {
+// 	res.status(404).sendFile(__dirname + "/error/404.html")
+// })
